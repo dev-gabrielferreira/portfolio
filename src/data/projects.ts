@@ -17,7 +17,14 @@ export function projectUrl(project: Project): string | undefined {
   return project.liveUrl || project.githubUrl || undefined;
 }
 
-export const projects: Project[] = [
+/** Ordem de exibição: engenharia de dados primeiro, agentes por último. */
+const CATEGORY_ORDER: Project["category"][] = [
+  "Dados & Pipelines",
+  "Machine Learning",
+  "IA & Agentes",
+];
+
+const catalog: Project[] = [
   {
     slug: "agente-orquestrador",
     title: "Agente Orquestrador",
@@ -253,3 +260,8 @@ export const projects: Project[] = [
     liveUrl: "",
   },
 ];
+
+// `sort` é estável, então dentro de cada categoria a ordem acima é mantida.
+export const projects: Project[] = [...catalog].sort(
+  (a, b) => CATEGORY_ORDER.indexOf(a.category) - CATEGORY_ORDER.indexOf(b.category),
+);

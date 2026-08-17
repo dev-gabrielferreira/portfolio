@@ -27,95 +27,88 @@ export function Hero({ photo }: { photo: string | null }) {
       />
 
       <div className="relative mx-auto w-full max-w-6xl px-6 md:px-10">
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mb-8 flex items-center gap-3"
-        >
-          <div className="photo-frame relative h-14 w-14 shrink-0 overflow-hidden rounded-full">
-            <ProfilePhoto src={photo} sizes="56px" priority />
-          </div>
-          <div>
-            <p className="mono-tag text-xs uppercase tracking-[0.2em] text-accent">Portfólio</p>
-            <p className="mt-0.5 text-sm text-fg-muted">{profile.focus}</p>
-          </div>
-        </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-display text-balance tracking-tight text-fg"
-        >
-          <span className="block text-xl font-medium text-fg-muted sm:text-2xl">
-            {profile.greeting}
-          </span>
-          <span className="mt-1 block text-4xl font-semibold leading-[1.05] sm:text-6xl md:text-7xl">
-            {profile.name}
-          </span>
-        </motion.h1>
-
-        <div className="mt-5 h-10 sm:h-12">
-          <AnimatePresence mode="wait">
-            <motion.p
-              key={roleIndex}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.35 }}
-              className="font-display text-xl font-medium text-fg-muted sm:text-2xl"
-            >
-              {profile.roles[roleIndex]}
-            </motion.p>
-          </AnimatePresence>
-        </div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-balance mt-6 max-w-xl text-base leading-relaxed text-fg-muted sm:text-lg"
-        >
-          {profile.tagline}
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-10 flex flex-wrap items-center gap-4"
-        >
-          <a
-            href="#projetos"
-            className="group inline-flex items-center gap-2 rounded-full bg-fg px-6 py-3 text-sm font-medium text-bg transition-transform hover:-translate-y-0.5"
+        <div className="grid items-stretch gap-8 md:grid-cols-[1.05fr_0.95fr] md:gap-10">
+          {/* Painel opaco: sem ele a grade do fundo passa por trás do texto. */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="rounded-3xl border border-border bg-bg-card p-7 shadow-[0_24px_60px_-40px_rgba(24,32,46,0.3)] sm:p-9"
           >
-            Ver projetos
-            <ArrowUpRight
-              size={16}
-              className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            <p className="mono-tag text-xs uppercase tracking-[0.2em] text-accent">
+              Portfólio · {profile.focus}
+            </p>
+
+            <h1 className="font-display mt-6 text-balance tracking-tight text-fg">
+              <span className="block text-xl font-medium text-fg-muted sm:text-2xl">
+                {profile.greeting}
+              </span>
+              <span className="mt-1 block text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-6xl">
+                {profile.name}
+              </span>
+            </h1>
+
+            <div className="mt-4 h-9 sm:h-10">
+              <AnimatePresence mode="wait">
+                <motion.p
+                  key={roleIndex}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.35 }}
+                  className="font-display text-lg font-medium text-fg-muted sm:text-xl"
+                >
+                  {profile.roles[roleIndex]}
+                </motion.p>
+              </AnimatePresence>
+            </div>
+
+            <p className="text-balance mt-5 max-w-lg leading-relaxed text-fg-muted">
+              {profile.tagline}
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <a
+                href="#projetos"
+                className="group inline-flex items-center gap-2 rounded-full bg-fg px-6 py-3 text-sm font-medium text-bg transition-transform hover:-translate-y-0.5"
+              >
+                Ver projetos
+                <ArrowUpRight
+                  size={16}
+                  className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </a>
+              <a
+                href="#contato"
+                className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium text-fg transition-colors hover:border-accent hover:text-accent"
+              >
+                Falar comigo
+              </a>
+            </div>
+
+            <p className="mono-tag mt-7 inline-flex items-center gap-2 text-[11px] uppercase tracking-wider text-fg-dim">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-2 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-2" />
+              </span>
+              {profile.availability}
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.97 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="photo-frame relative aspect-[4/5] w-full overflow-hidden rounded-3xl md:aspect-auto md:h-full md:min-h-[480px]"
+          >
+            <ProfilePhoto
+              src={photo}
+              sizes="(max-width: 768px) 90vw, 520px"
+              priority
+              objectPosition="center 18%"
             />
-          </a>
-          <a
-            href="#contato"
-            className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium text-fg transition-colors hover:border-accent hover:text-accent"
-          >
-            Falar comigo
-          </a>
-        </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.45 }}
-          className="mono-tag mt-8 inline-flex items-center gap-2 text-[11px] uppercase tracking-wider text-fg-dim"
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-2 opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-2" />
-          </span>
-          {profile.availability}
-        </motion.p>
+          </motion.div>
+        </div>
       </div>
 
       <motion.a

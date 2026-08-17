@@ -52,11 +52,15 @@ export function ProjectsCarousel() {
   return (
     <section className="overflow-hidden border-b border-border py-16 md:py-20">
       <div className="mx-auto flex max-w-6xl flex-wrap items-end justify-between gap-4 px-6 md:px-10">
-        <div>
+        <div className="max-w-xl">
           <p className="mono-tag text-xs uppercase tracking-[0.2em] text-accent">Em destaque</p>
           <h2 className="font-display mt-3 text-2xl font-semibold tracking-tight text-fg sm:text-3xl">
-            Uma olhada rápida em tudo.
+            Passa o olho nos projetos.
           </h2>
+          <p className="mt-3 leading-relaxed text-fg-muted">
+            Estão em ordem: primeiro os de dados e pipeline, depois machine learning, e por
+            último os agentes. Clica em qualquer um para abrir os detalhes.
+          </p>
         </div>
         <a
           href="#projetos"

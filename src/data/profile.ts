@@ -28,8 +28,7 @@ export const profile = {
     // (dev-gabrielferreira). Já o LinkedIn usa a forma com hífen, não verificada.
     linkedin: "https://linkedin.com/in/dev-gabriel-ferreira",
     github: "https://github.com/dev-gabrielferreira",
-    // TODO(Gabriel): adicionar número de WhatsApp (formato wa.me/55DDXXXXXXXXX).
-    whatsapp: "",
+    whatsapp: "https://wa.me/5531975901524",
   },
   // O currículo é detectado sozinho: qualquer PDF em public/resume/ vira o download.
 };
