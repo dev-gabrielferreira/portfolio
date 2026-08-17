@@ -5,17 +5,17 @@ export const profile = {
   greeting: "Oi, eu sou o",
   roles: [
     "Engenheiro de Controle e Automação",
-    "Construindo soluções com IA",
-    "Dados, automação e LLMs",
+    "Dados, IA e automação",
+    "Python, LLMs e deploy em VPS",
   ],
   location: "Brasil",
   tagline:
-    "Engenheiro de automação virando gente de dados e IA. Construo agentes que decidem, modelos que preveem e análises que respondem perguntas de verdade.",
-  availability: "Aberto a oportunidades em Dados e IA",
+    "Vim da automação industrial e hoje trabalho com dados e IA. Gosto quando a coisa sai do notebook e vira API, container e deploy.",
+  availability: "Aberto a oportunidades em dados e IA",
   bio: [
-    "Me formei em Engenharia de Controle e Automação pela UFOP e passei um bom tempo olhando para sistemas físicos: processo, sensor, falha, confiabilidade. Hoje uso exatamente esse jeito de pensar para construir software de dados e IA.",
-    "Meus projetos não são exercícios soltos, eles conversam entre si. Um extrai dados de documentos, outro busca resposta na documentação técnica, outro tria tickets de suporte, e um agente orquestrador decide qual deles chamar. Do lado de machine learning, trabalho com manutenção preditiva e previsão de séries temporais.",
-    "Gosto de tratar cada projeto como produto: escopo definido, decisões documentadas, testes automatizados e deploy real em VPS. E se um modelo não bate o baseline, isso está escrito no README.",
+    "Me formei em Engenharia de Controle e Automação na UFOP. Passei um tempo bom olhando para chão de fábrica: sensor, alarme, o que quebra e por quê. É esse jeito de pensar que eu trago para o software.",
+    "Os projetos aqui do portfólio conversam entre si. Um extrai dado de documento, outro procura resposta em manual técnico, outro faz triagem de ticket. E tem um agente em cima dos três decidindo qual chamar. Fora esses, tem a parte de machine learning: manutenção preditiva e previsão de série temporal.",
+    "Tento tratar cada um como produto, não como exercício de curso. Escopo fechado, decisão documentada, teste rodando, deploy em VPS. E quando o modelo não bate o baseline, está escrito no README que não bateu.",
   ],
   focus: "Dados e Inteligência Artificial",
   education: {

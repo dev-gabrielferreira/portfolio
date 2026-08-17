@@ -50,8 +50,8 @@ export function Contact() {
             Bora conversar?
           </h2>
           <p className="text-balance mx-auto mt-4 max-w-lg leading-relaxed text-fg-muted">
-            Estou aberto a oportunidades, colaborações ou só trocar ideia sobre dados e IA.
-            Me chama pelo canal que preferir.
+            Vaga, projeto ou só trocar ideia sobre dados e IA. Me chama pelo canal que for
+            mais fácil para você.
           </p>
 
           <button

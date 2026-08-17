@@ -54,7 +54,7 @@ export function About({ photo }: { photo: string | null }) {
           <Reveal>
             <p className="mono-tag text-xs uppercase tracking-[0.2em] text-accent">Stack</p>
             <h3 className="font-display mt-4 text-2xl font-semibold tracking-tight text-fg sm:text-3xl">
-              As ferramentas que uso no dia a dia.
+              O que eu uso no dia a dia.
             </h3>
           </Reveal>
 

@@ -30,11 +30,11 @@ export function Projects() {
         <Reveal>
           <p className="mono-tag text-xs uppercase tracking-[0.2em] text-accent">Projetos</p>
           <h2 className="font-display mt-4 text-3xl font-semibold tracking-tight text-fg sm:text-4xl">
-            O que eu venho construindo.
+            No que eu ando trabalhando.
           </h2>
           <p className="text-balance mt-4 max-w-xl leading-relaxed text-fg-muted">
-            {projects.length} sistemas de ponta a ponta. Cada um resolve um problema específico, e
-            alguns deles conversam entre si.
+            São {projects.length}. Alguns conversam entre si, outros vivem sozinhos. Clica em
+            qualquer um para ver o que tem por dentro.
           </p>
         </Reveal>
 

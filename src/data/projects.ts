@@ -25,7 +25,7 @@ export const projects: Project[] = [
     description:
       "Agente de IA baseado em function calling que recebe um pedido em linguagem natural, decide quais ferramentas acionar entre os outros serviços do portfólio (extração de documentos, busca em documentação técnica, triagem de tickets) e encadeia ações em múltiplas etapas, sempre pedindo confirmação explícita antes de qualquer ação com efeito colateral.",
     problem:
-      "Ter vários serviços de IA especializados não basta se alguém precisa saber manualmente qual chamar. Este agente concentra a decisão: entende o pedido, escolhe a ferramenta certa (ou a sequência delas) e só executa ações reais com aprovação do usuário.",
+      "Eu já tinha três serviços de IA separados, e ainda assim precisava saber de cabeça qual chamar em cada situação. Esse agente resolve isso: entende o pedido, escolhe a ferramenta certa ou a sequência delas, e só executa de fato com a minha aprovação.",
     stack: [
       "Python",
       "FastAPI",
@@ -55,7 +55,7 @@ export const projects: Project[] = [
     description:
       "Assistente onde o técnico descreve um problema ou digita um código de falha e o sistema busca na documentação técnica (chillers, painéis de incêndio, CFTV, controladores BMS/BACnet/Modbus), devolvendo a causa provável e o procedimento de solução com citação exata do documento e da página.",
     problem:
-      "Documentação técnica de automação predial é extensa e dispersa em PDFs. Encontrar o procedimento certo para um código de falha específico consome tempo, e resposta sem fonte não é confiável em campo.",
+      "Documentação de automação predial é enorme e espalhada em dezenas de PDFs. Achar o procedimento certo para um código de falha demora, e em campo ninguém confia numa resposta que não diz de onde veio.",
     stack: [
       "Python",
       "FastAPI",
@@ -87,7 +87,7 @@ export const projects: Project[] = [
     description:
       "Um agente de captura registra os cliques e telas de um técnico executando um processo (em sistema web ou desktop). A partir dessas capturas, uma IA gera um tutorial passo a passo em Markdown com screenshots anotados, revisável por humano antes de publicar na base de conhecimento.",
     problem:
-      "Documentar processos manualmente é repetitivo e costuma ficar desatualizado. Aqui, o próprio ato de executar a tarefa já gera o rascunho da documentação.",
+      "Documentar processo na mão é chato e o resultado envelhece rápido. A ideia aqui é que executar a tarefa uma vez já deixe o rascunho da documentação pronto.",
     stack: [
       "Python",
       "FastAPI",
@@ -117,7 +117,7 @@ export const projects: Project[] = [
     description:
       "Agente que ingere tickets de suporte em texto livre, classifica tema, prioridade e área de roteamento via LLM, e tenta responder automaticamente com base em uma FAQ curada usando busca semântica. Quando não consegue resolver, encaminha para um humano com a resposta já rascunhada.",
     problem:
-      "Boa parte dos tickets de suporte são dúvidas repetidas que já têm resposta documentada. Triar e responder isso manualmente desperdiça tempo do time de suporte.",
+      "Boa parte dos tickets é a mesma dúvida de sempre, com resposta já documentada em algum lugar. Fazer isso na mão queima o tempo de quem poderia estar resolvendo o que é difícil.",
     stack: [
       "Python",
       "FastAPI",
@@ -147,7 +147,7 @@ export const projects: Project[] = [
     description:
       "Pipeline de extração de documentos (notas fiscais, boletos, ordens de serviço, contratos) que identifica campos como nome, CPF/CNPJ, endereço, itens e valores, com pontuação de confiança e proveniência por campo, validando dígitos verificadores, datas e soma de valores antes de exportar.",
     problem:
-      "Digitar manualmente dados de documentos é lento e sujeito a erro. Extrair sem validação, por outro lado, gera confiança falsa. Aqui o LLM é obrigado a citar de onde tirou cada campo, e o resultado passa por validação determinística.",
+      "Digitar dado de documento na mão é lento e dá erro. Só que extrair com LLM sem validar nada é pior, porque parece certo. Aqui o modelo é obrigado a dizer de onde tirou cada campo, e o resultado ainda passa por uma checagem que não depende de IA nenhuma.",
     stack: [
       "Python",
       "FastAPI",
@@ -178,7 +178,7 @@ export const projects: Project[] = [
     description:
       "Modelo de machine learning que, a partir de leituras de sensores de equipamentos industriais, prevê risco de falha, o modo de falha mais provável, a vida útil restante (RUL) e as causas prováveis via importância de features, com tratamento explícito de dados desbalanceados e limiares de decisão baseados em custo.",
     problem:
-      "Parar equipamento por manutenção não planejada custa caro. Prever a falha antes que aconteça, com explicação do porquê, permite agir a tempo e priorizar o que realmente importa.",
+      "Parada não planejada é o que mais dói na manutenção. Se dá para prever a falha antes, e ainda dizer qual sensor puxou aquela previsão, o time consegue se organizar em vez de apagar incêndio.",
     stack: [
       "Python",
       "scikit-learn",
@@ -208,7 +208,7 @@ export const projects: Project[] = [
     description:
       "Previsão do consumo horário de energia da rede elétrica brasileira (dados públicos do ONS, 2022 a 2025), comparando desde baselines ingênuos e sazonais até SARIMA/ETS, Prophet e gradient boosting. Nenhum modelo é considerado bom sem antes superar o baseline com validação que respeita o tempo.",
     problem:
-      "É fácil publicar um modelo de série temporal com métrica bonita mas enviesada por validação errada. Aqui isso vira regra: backtesting com origem móvel, comparação explícita contra baseline e intervalos de incerteza.",
+      "É muito fácil publicar série temporal com métrica bonita e validação errada. Foi o erro que eu quis evitar aqui, então virou regra: backtesting com origem móvel, comparação contra baseline sempre, e intervalo de incerteza junto com a previsão.",
     stack: [
       "Python",
       "pandas · NumPy",
@@ -233,18 +233,18 @@ export const projects: Project[] = [
   {
     slug: "eda-storytelling",
     title: "Análise Exploratória e Storytelling",
-    tagline: "De uma pergunta de negócio a uma conclusão acionável",
+    tagline: "De uma pergunta de negócio até uma resposta que dá para usar",
     description:
-      "Análise de ponta a ponta sobre acidentes em rodovias federais brasileiras (dados abertos da PRF, 2021 a 2025): parte de uma pergunta de negócio clara, passa por limpeza documentada e reproduzível, e termina em uma conclusão acionável, entregue como relatório com narrativa e dashboard interativo.",
+      "Análise completa sobre acidentes em rodovias federais brasileiras, com os dados abertos da PRF de 2021 a 2025. Começa com uma pergunta clara, passa por uma limpeza que qualquer um consegue reproduzir e termina em uma recomendação concreta. Entreguei como relatório com narrativa e como dashboard interativo.",
     problem:
-      "Treinar modelo é a parte que todo mundo mostra. Interpretar o dado e contar a história por trás dele é o que separa quem entende o problema de quem só roda algoritmo.",
+      "Treinar modelo é a parte que todo mundo mostra. Interpretar o dado e contar a história por trás dele é o que separa quem entendeu o problema de quem só rodou algoritmo.",
     stack: ["Python", "pandas", "Plotly", "Streamlit", "Jupyter", "Power BI (modelo/DAX)"],
     features: [
       "342.624 acidentes e 28.668 mortos analisados, de 2021 a 2025",
       "Achado central: colisão frontal (63%) e atropelamento (68%) muito acima da média de gravidade (28,3%)",
-      "Hipóteses testadas e refutadas pelo dado, por exemplo: chuva não aumenta a gravidade",
+      "Hipóteses que o dado derrubou. Chuva, por exemplo, não aumenta a gravidade",
       "Trecho crítico identificado: BR-101/SC, km 130 ao 210",
-      "Disciplina explícita de correlação diferente de causa, e visualização honesta",
+      "Cuidado o tempo todo para não confundir correlação com causa, e gráfico sem truque de eixo",
       "Relatório narrativo (notebook para HTML) e dashboard interativo em Streamlit",
     ],
     status: "MVP em construção",

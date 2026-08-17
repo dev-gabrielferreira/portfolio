@@ -15,7 +15,7 @@ export function ProjectCard({ project, cover }: { project: Project; cover?: stri
   return (
     <motion.article
       variants={revealItem}
-      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-bg-card transition-all duration-300 hover:-translate-y-1 hover:border-border-hover hover:shadow-[0_24px_60px_-32px_rgba(0,0,0,0.9)] focus-within:border-accent"
+      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-bg-card transition-all duration-300 hover:-translate-y-1 hover:border-border-hover hover:shadow-[0_24px_60px_-32px_rgba(5,9,16,0.85)] focus-within:border-accent"
     >
       <button
         onClick={() => openProject(project)}
@@ -72,7 +72,7 @@ export function ProjectCard({ project, cover }: { project: Project; cover?: stri
               <ArrowUpRight size={13} />
             </a>
           ) : (
-            <span className="text-[11px] text-fg-dim/70" title="Repositório privado por enquanto">
+            <span className="text-[11px] text-fg-dim" title="Repositório privado por enquanto">
               link em breve
             </span>
           )}

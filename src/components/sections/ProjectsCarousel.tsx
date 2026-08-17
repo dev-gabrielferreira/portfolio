@@ -55,7 +55,7 @@ export function ProjectsCarousel() {
         <div>
           <p className="mono-tag text-xs uppercase tracking-[0.2em] text-accent">Em destaque</p>
           <h2 className="font-display mt-3 text-2xl font-semibold tracking-tight text-fg sm:text-3xl">
-            Um passeio rápido pelos projetos.
+            Uma olhada rápida em tudo.
           </h2>
         </div>
         <a
