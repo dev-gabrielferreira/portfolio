@@ -12,9 +12,9 @@ import type { Project } from "@/data/projects";
 type Palette = { line: string; fill: string };
 
 const palettes: Record<Project["category"], Palette> = {
-  "IA & Agentes": { line: "var(--accent)", fill: "var(--accent)" },
+  "Dados & Pipelines": { line: "var(--accent)", fill: "var(--accent)" },
   "Machine Learning": { line: "var(--accent-2)", fill: "var(--accent-2)" },
-  "Dados & Análise": { line: "var(--fg-muted)", fill: "var(--fg)" },
+  "IA & Agentes": { line: "var(--fg-muted)", fill: "var(--fg)" },
 };
 
 /** PRNG determinístico (FNV-1a + xorshift) para o desenho não variar entre servidor e cliente. */
@@ -195,7 +195,9 @@ function GeneratedCover({ project }: { project: Project }) {
       {project.category === "Machine Learning" && (
         <ForecastCurve seed={project.slug} palette={palette} />
       )}
-      {project.category === "Dados & Análise" && <DataBars seed={project.slug} palette={palette} />}
+      {project.category === "Dados & Pipelines" && (
+        <DataBars seed={project.slug} palette={palette} />
+      )}
     </svg>
   );
 }

@@ -22,8 +22,8 @@ export function Hero({ photo }: { photo: string | null }) {
       className="bg-grid bg-noise relative flex min-h-screen items-center overflow-hidden border-b border-border pt-28 pb-20"
     >
       <div
-        className="pointer-events-none absolute -top-32 left-1/2 h-[560px] w-[560px] -translate-x-1/2 rounded-full opacity-30 blur-[120px]"
-        style={{ background: "radial-gradient(closest-side, var(--accent), transparent)" }}
+        className="pointer-events-none absolute -top-32 left-1/2 h-[560px] w-[560px] -translate-x-1/2 rounded-full opacity-40 blur-[120px]"
+        style={{ background: "radial-gradient(closest-side, var(--accent-glow), transparent)" }}
       />
 
       <div className="relative mx-auto w-full max-w-6xl px-6 md:px-10">

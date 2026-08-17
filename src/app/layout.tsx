@@ -23,7 +23,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Gabriel Ferreira | Portfólio",
   description:
-    "Engenheiro de Controle e Automação construindo soluções em Dados e IA. Projetos de agentes, RAG, machine learning e análise de dados.",
+    "Engenheiro de Controle e Automação atuando em Engenharia de Dados. Projetos de ingestão, validação e pipelines em Python, com machine learning e LLMs em cima.",
 };
 
 export default function RootLayout({

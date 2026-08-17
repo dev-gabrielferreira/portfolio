@@ -7,7 +7,7 @@ export type Project = {
   stack: string[];
   features: string[];
   status: "MVP em construção" | "Concluído";
-  category: "IA & Agentes" | "Machine Learning" | "Dados & Análise";
+  category: "Dados & Pipelines" | "Machine Learning" | "IA & Agentes";
   githubUrl?: string;
   liveUrl?: string;
 };
@@ -167,7 +167,7 @@ export const projects: Project[] = [
       "Discussão explícita de LGPD, com recomendação de Ollama local para dados sensíveis",
     ],
     status: "MVP em construção",
-    category: "IA & Agentes",
+    category: "Dados & Pipelines",
     githubUrl: "",
     liveUrl: "",
   },
@@ -248,7 +248,7 @@ export const projects: Project[] = [
       "Relatório narrativo (notebook para HTML) e dashboard interativo em Streamlit",
     ],
     status: "MVP em construção",
-    category: "Dados & Análise",
+    category: "Dados & Pipelines",
     githubUrl: "https://github.com/dev-gabriel-ferreira/eda-storytelling-br",
     liveUrl: "",
   },

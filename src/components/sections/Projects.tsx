@@ -7,7 +7,7 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { Reveal } from "@/components/ui/Reveal";
 import { useProjects } from "@/components/ProjectsProvider";
 
-const categories = ["Todos", "IA & Agentes", "Machine Learning", "Dados & Análise"] as const;
+const categories = ["Todos", "Dados & Pipelines", "Machine Learning", "IA & Agentes"] as const;
 
 const gridVariants: Variants = {
   hidden: {},
@@ -46,7 +46,7 @@ export function Projects() {
               aria-pressed={filter === cat}
               className={`mono-tag rounded-full border px-4 py-2 text-xs uppercase tracking-wider transition-colors ${
                 filter === cat
-                  ? "border-accent bg-accent-soft text-accent"
+                  ? "border-accent bg-accent text-bg"
                   : "border-border text-fg-muted hover:border-border-hover hover:text-fg"
               }`}
             >

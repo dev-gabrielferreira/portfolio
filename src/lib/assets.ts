@@ -11,6 +11,7 @@ import { projects } from "@/data/projects";
  *
  *   public/gabriel-ferreira.jpg   -> foto de perfil
  *   public/projects/<slug>.png    -> capa do projeto (senão, capa gerada)
+ *   public/resume/qualquer.pdf    -> currículo para download
  */
 
 const PUBLIC_DIR = path.join(process.cwd(), "public");
@@ -29,6 +30,14 @@ function findPublicFile(dir: string, basename: string): string | null {
 
 export function getProfilePhoto(): string | null {
   return findPublicFile("", PHOTO_BASENAME);
+}
+
+/** Primeiro PDF encontrado em `public/resume/`, independente do nome. */
+export function getResumeFile(): string | null {
+  const dir = path.join(PUBLIC_DIR, "resume");
+  if (!fs.existsSync(dir)) return null;
+  const pdf = fs.readdirSync(dir).find((file) => file.toLowerCase().endsWith(".pdf"));
+  return pdf ? path.posix.join("/resume", pdf) : null;
 }
 
 export type ProjectCovers = Record<string, string | undefined>;

@@ -4,20 +4,20 @@ export const profile = {
   initials: "GF",
   greeting: "Oi, eu sou o",
   roles: [
-    "Engenheiro de Controle e Automação",
-    "Dados, IA e automação",
-    "Python, LLMs e deploy em VPS",
+    "Engenharia de Dados",
+    "Ingestão, validação e pipeline",
+    "Python, Docker e deploy em VPS",
   ],
   location: "Brasil",
   tagline:
-    "Vim da automação industrial e hoje trabalho com dados e IA. Gosto quando a coisa sai do notebook e vira API, container e deploy.",
-  availability: "Aberto a oportunidades em dados e IA",
+    "Vim da automação industrial e hoje construo pipeline de dados. Ingestão, validação e o deploy que faz aquilo rodar sozinho em produção.",
+  availability: "Aberto a oportunidades em engenharia de dados",
   bio: [
-    "Me formei em Engenharia de Controle e Automação na UFOP. Passei um tempo bom olhando para chão de fábrica: sensor, alarme, o que quebra e por quê. É esse jeito de pensar que eu trago para o software.",
-    "Os projetos aqui do portfólio conversam entre si. Um extrai dado de documento, outro procura resposta em manual técnico, outro faz triagem de ticket. E tem um agente em cima dos três decidindo qual chamar. Fora esses, tem a parte de machine learning: manutenção preditiva e previsão de série temporal.",
+    "Me formei em Engenharia de Controle e Automação na UFOP. Passei um tempo bom olhando para chão de fábrica: sensor, alarme, o que quebra e por quê. Dado sujo, sensor que para de responder e processo que falha no meio do caminho não me assustam, era o que eu via todo dia.",
+    "O que me interessa hoje é a parte de engenharia: tirar dado de onde ele está, seja PDF, API ou arquivo solto, validar antes de confiar, e deixar rodando em container sem depender de alguém apertar botão. Quase todos os projetos aqui embaixo são isso por baixo do capô, mesmo os que têm IA em cima.",
     "Tento tratar cada um como produto, não como exercício de curso. Escopo fechado, decisão documentada, teste rodando, deploy em VPS. E quando o modelo não bate o baseline, está escrito no README que não bateu.",
   ],
-  focus: "Dados e Inteligência Artificial",
+  focus: "Engenharia de Dados",
   education: {
     degree: "Engenharia de Controle e Automação",
     institution: "UFOP, Universidade Federal de Ouro Preto",
@@ -31,32 +31,31 @@ export const profile = {
     // TODO(Gabriel): adicionar número de WhatsApp (formato wa.me/55DDXXXXXXXXX).
     whatsapp: "",
   },
-  resumeFile: "/resume/curriculo-gabriel-ferreira.pdf",
-  // Troque para `true` assim que colocar o PDF de verdade em public/resume/.
-  resumeAvailable: false,
+  // O currículo é detectado sozinho: qualquer PDF em public/resume/ vira o download.
 };
 
+// Ordem proposital: engenharia de dados primeiro, IA por último.
+// Só entra aqui o que aparece de fato em algum projeto do portfólio.
 export const skillGroups = [
   {
-    title: "IA & LLMs",
+    title: "Engenharia de Dados",
     skills: [
-      "LLM Function Calling",
-      "RAG (Retrieval-Augmented Generation)",
-      "Prompt Engineering",
-      "Vision LLM / OCR",
-      "OpenAI-compatible APIs",
-      "Groq · OpenRouter · Ollama",
+      "Ingestão de PDF, CSV e APIs",
+      "Limpeza e validação de dados",
+      "pandas · NumPy",
+      "Schema e contrato com Pydantic",
+      "Pipelines reprodutíveis",
+      "PyMuPDF · openpyxl",
     ],
   },
   {
-    title: "Dados & Machine Learning",
+    title: "Infraestrutura & Deploy",
     skills: [
-      "pandas · NumPy",
-      "scikit-learn",
-      "LightGBM",
-      "SHAP (explicabilidade)",
-      "statsmodels · Prophet",
-      "Séries temporais",
+      "Docker · Docker Compose",
+      "Caddy (HTTPS)",
+      "VPS (Hostinger)",
+      "Git/GitHub",
+      "Serviços conversando via REST",
     ],
   },
   {
@@ -71,20 +70,32 @@ export const skillGroups = [
     ],
   },
   {
-    title: "Dados vetoriais & Busca",
+    title: "Machine Learning",
     skills: [
-      "ChromaDB",
-      "sentence-transformers",
-      "Busca híbrida (BM25)",
-      "PyMuPDF",
+      "scikit-learn",
+      "LightGBM",
+      "SHAP (explicabilidade)",
+      "statsmodels · Prophet",
+      "Séries temporais",
+      "Validação sem vazamento de dados",
+    ],
+  },
+  {
+    title: "Busca & Dados vetoriais",
+    skills: ["ChromaDB", "sentence-transformers", "Busca híbrida (BM25)"],
+  },
+  {
+    title: "IA & LLMs",
+    skills: [
+      "LLM Function Calling",
+      "RAG (Retrieval-Augmented Generation)",
+      "Vision LLM / OCR",
+      "OpenAI-compatible APIs",
+      "Groq · OpenRouter · Ollama",
     ],
   },
   {
     title: "Visualização & BI",
     skills: ["Streamlit", "Plotly", "Power BI", "Jupyter"],
-  },
-  {
-    title: "Infraestrutura & Deploy",
-    skills: ["Docker · Docker Compose", "Caddy (HTTPS)", "VPS (Hostinger)", "Git/GitHub"],
   },
 ];

@@ -1,9 +1,8 @@
 import { Download, Briefcase, Sparkles } from "lucide-react";
-import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
 import { Reveal } from "@/components/ui/Reveal";
 
-export function Resume() {
+export function Resume({ resume }: { resume: string | null }) {
   return (
     <section id="curriculo" className="border-b border-border py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6 md:px-10">
@@ -22,9 +21,9 @@ export function Resume() {
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              {profile.resumeAvailable ? (
+              {resume ? (
                 <a
-                  href={profile.resumeFile}
+                  href={resume}
                   download
                   className="inline-flex items-center gap-2 rounded-full bg-fg px-6 py-3 text-sm font-medium text-bg transition-transform hover:-translate-y-0.5"
                 >

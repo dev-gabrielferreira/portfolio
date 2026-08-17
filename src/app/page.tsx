@@ -7,11 +7,12 @@ import { Resume } from "@/components/sections/Resume";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/Footer";
 import { ProjectsProvider } from "@/components/ProjectsProvider";
-import { getProfilePhoto, getProjectCovers } from "@/lib/assets";
+import { getProfilePhoto, getProjectCovers, getResumeFile } from "@/lib/assets";
 
 export default function Home() {
   const photo = getProfilePhoto();
   const covers = getProjectCovers();
+  const resume = getResumeFile();
 
   return (
     <ProjectsProvider covers={covers}>
@@ -21,7 +22,7 @@ export default function Home() {
         <ProjectsCarousel />
         <About photo={photo} />
         <Projects />
-        <Resume />
+        <Resume resume={resume} />
         <Contact />
       </main>
       <Footer />

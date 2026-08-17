@@ -67,16 +67,19 @@ export function ProjectsCarousel() {
         </a>
       </div>
 
-      <div className="marquee mt-10">
-        <div className="marquee-track">
-          {track.map((project, i) => (
-            <CarouselCard
-              key={`${project.slug}-${i}`}
-              project={project}
-              cover={covers[project.slug]}
-              duplicate={i >= projects.length}
-            />
-          ))}
+      {/* Mesma margem lateral do resto da página, para os cards não colarem na borda. */}
+      <div className="mx-auto mt-10 max-w-6xl px-6 md:px-10">
+        <div className="marquee">
+          <div className="marquee-track">
+            {track.map((project, i) => (
+              <CarouselCard
+                key={`${project.slug}-${i}`}
+                project={project}
+                cover={covers[project.slug]}
+                duplicate={i >= projects.length}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

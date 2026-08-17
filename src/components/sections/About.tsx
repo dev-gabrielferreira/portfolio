@@ -10,8 +10,8 @@ export function About({ photo }: { photo: string | null }) {
         <div className="grid gap-12 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] md:items-start md:gap-16">
           <Reveal className="relative">
             <div
-              className="pointer-events-none absolute -left-10 -top-10 h-56 w-56 rounded-full opacity-40 blur-[90px]"
-              style={{ background: "radial-gradient(closest-side, var(--accent), transparent)" }}
+              className="pointer-events-none absolute -left-10 -top-10 h-56 w-56 rounded-full opacity-50 blur-[90px]"
+              style={{ background: "radial-gradient(closest-side, var(--accent-glow), transparent)" }}
             />
 
             <div className="photo-frame relative aspect-[4/5] w-full max-w-[340px] overflow-hidden rounded-3xl">
@@ -37,7 +37,7 @@ export function About({ photo }: { photo: string | null }) {
           <Reveal delay={0.1}>
             <p className="mono-tag text-xs uppercase tracking-[0.2em] text-accent">Sobre</p>
             <h2 className="font-display mt-4 text-3xl font-semibold tracking-tight text-fg sm:text-4xl">
-              Como eu cheguei em dados e IA.
+              Como eu cheguei na engenharia de dados.
             </h2>
 
             <div className="mt-8 space-y-5">

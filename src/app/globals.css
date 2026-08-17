@@ -1,17 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #141b26;
-  --bg-elevated: #1c2431;
-  --bg-card: #20293a;
-  --border: #303c50;
-  --border-hover: #43506a;
-  --fg: #eef1f6;
-  --fg-muted: #a4aec1;
-  --fg-dim: #8894ab;
-  --accent: #e8a33d;
-  --accent-soft: #e8a33d26;
-  --accent-2: #4fb8a6;
+  --bg: #f2f4f7;
+  --bg-elevated: #e9ecf1;
+  --bg-card: #ffffff;
+  --border: #dbe0e8;
+  --border-hover: #b8c1cf;
+  --fg: #18202e;
+  --fg-muted: #515c6e;
+  --fg-dim: #5d6879;
+  /* Âmbar escurecido para passar 4.5:1 sobre os fundos claros. */
+  --accent: #9c5806;
+  /* Só para brilhos decorativos, nunca para texto. */
+  --accent-glow: #f0b25a;
+  --accent-2: #0f766e;
   --font-display: var(--font-space-grotesk);
   --font-body: var(--font-inter);
   --font-mono: var(--font-jetbrains-mono);
@@ -27,7 +29,7 @@
   --color-fg-muted: var(--fg-muted);
   --color-fg-dim: var(--fg-dim);
   --color-accent: var(--accent);
-  --color-accent-soft: var(--accent-soft);
+  --color-accent-glow: var(--accent-glow);
   --color-accent-2: var(--accent-2);
   --font-display: var(--font-display);
   --font-body: var(--font-body);
@@ -46,7 +48,7 @@ body {
 
 ::selection {
   background: var(--accent);
-  color: #141b26;
+  color: #ffffff;
 }
 
 ::-webkit-scrollbar {
@@ -62,10 +64,11 @@ body {
   border-radius: 999px;
 }
 
+/* Linhas em cinza um pouco mais escuro que o fundo. */
 .bg-grid {
   background-image:
-    linear-gradient(to right, rgba(238, 241, 246, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(238, 241, 246, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(24, 32, 46, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(24, 32, 46, 0.08) 1px, transparent 1px);
   background-size: 56px 56px;
 }
 
@@ -78,9 +81,10 @@ body {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.035;
+  opacity: 0.045;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-  mix-blend-mode: overlay;
+  /* multiply em vez de overlay: em fundo claro, overlay some. */
+  mix-blend-mode: multiply;
 }
 
 .text-balance {
@@ -90,10 +94,6 @@ body {
 .mono-tag {
   font-family: var(--font-mono);
   letter-spacing: 0.02em;
-}
-
-.glow-accent {
-  box-shadow: 0 0 0 1px var(--border), 0 20px 60px -20px var(--accent-soft);
 }
 
 /* Carrossel infinito de projetos.
@@ -139,7 +139,7 @@ body {
 .photo-frame {
   box-shadow:
     0 0 0 1px var(--border),
-    0 40px 90px -50px rgba(5, 9, 16, 0.9);
+    0 30px 70px -40px rgba(24, 32, 46, 0.35);
 }
 
 @media (prefers-reduced-motion: reduce) {
