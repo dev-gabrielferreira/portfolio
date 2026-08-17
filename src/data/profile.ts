@@ -1,30 +1,33 @@
 export const profile = {
   name: "Gabriel Ferreira",
+  firstName: "Gabriel",
   initials: "GF",
+  greeting: "Oi, eu sou o",
   roles: [
     "Engenheiro de Controle e Automação",
-    "Desenvolvedor de Soluções com IA",
-    "Dados, Automação e LLMs",
+    "Construindo soluções com IA",
+    "Dados, automação e LLMs",
   ],
   location: "Brasil",
   tagline:
-    "Construo sistemas de IA aplicada — do agente que decide o que fazer até o modelo que prevê o que vai quebrar.",
+    "Engenheiro de automação virando gente de dados e IA. Construo agentes que decidem, modelos que preveem e análises que respondem perguntas de verdade.",
+  availability: "Aberto a oportunidades em Dados e IA",
   bio: [
-    "Formado em Engenharia de Controle e Automação pela UFOP, em transição de carreira para Dados e Inteligência Artificial. Trago da automação industrial uma leitura de sistemas, processos e confiabilidade que aplico hoje na construção de produtos de IA.",
-    "Meus projetos formam um portfólio conectado: extração de documentos, busca semântica sobre documentação técnica, triagem automática de tickets e um agente orquestrador que decide qual dessas ferramentas usar — além de modelos de machine learning para manutenção preditiva e previsão de séries temporais, e análises de dados com conclusões acionáveis.",
-    "Gosto de tratar cada projeto como um produto: com escopo definido, decisões documentadas, testes automatizados e deploy real em VPS — não apenas notebooks soltos.",
+    "Me formei em Engenharia de Controle e Automação pela UFOP e passei um bom tempo olhando para sistemas físicos: processo, sensor, falha, confiabilidade. Hoje uso exatamente esse jeito de pensar para construir software de dados e IA.",
+    "Meus projetos não são exercícios soltos, eles conversam entre si. Um extrai dados de documentos, outro busca resposta na documentação técnica, outro tria tickets de suporte, e um agente orquestrador decide qual deles chamar. Do lado de machine learning, trabalho com manutenção preditiva e previsão de séries temporais.",
+    "Gosto de tratar cada projeto como produto: escopo definido, decisões documentadas, testes automatizados e deploy real em VPS. E se um modelo não bate o baseline, isso está escrito no README.",
   ],
-  focus: "Em transição para Dados & Inteligência Artificial",
+  focus: "Dados e Inteligência Artificial",
   education: {
     degree: "Engenharia de Controle e Automação",
-    institution: "UFOP — Universidade Federal de Ouro Preto",
+    institution: "UFOP, Universidade Federal de Ouro Preto",
   },
   contact: {
     email: "gabrielferreora2gf@gmail.com",
+    // TODO(Gabriel): confirmar. O username do GitHub veio do remote deste repo
+    // (dev-gabrielferreira). Já o LinkedIn usa a forma com hífen, não verificada.
     linkedin: "https://linkedin.com/in/dev-gabriel-ferreira",
-    // TODO(Gabriel): confirmar o username correto do GitHub — vi variações
-    // (dev-gabriel-ferreira / dev-gabrielferreira) entre os READMEs dos projetos.
-    github: "",
+    github: "https://github.com/dev-gabrielferreira",
     // TODO(Gabriel): adicionar número de WhatsApp (formato wa.me/55DDXXXXXXXXX).
     whatsapp: "",
   },

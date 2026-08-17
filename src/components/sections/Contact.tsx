@@ -15,16 +15,19 @@ export function Contact() {
     setTimeout(() => setCopied(false), 1800);
   };
 
+  /** Mostra o username no lugar da URL inteira. */
+  const handleOf = (url: string) => url.replace(/\/+$/, "").split("/").pop() || "em breve";
+
   const links = [
     {
       label: "LinkedIn",
-      value: "dev-gabriel-ferreira",
+      value: handleOf(profile.contact.linkedin),
       href: profile.contact.linkedin,
       icon: LinkedinIcon,
     },
     {
       label: "GitHub",
-      value: profile.contact.github || "em breve",
+      value: profile.contact.github ? handleOf(profile.contact.github) : "em breve",
       href: profile.contact.github,
       icon: GithubIcon,
     },
@@ -44,8 +47,12 @@ export function Contact() {
             Contato
           </p>
           <h2 className="font-display text-balance mx-auto mt-4 max-w-2xl text-3xl font-semibold tracking-tight text-fg sm:text-4xl">
-            Tem um projeto de dados ou IA em mente? Vamos conversar.
+            Bora conversar?
           </h2>
+          <p className="text-balance mx-auto mt-4 max-w-lg leading-relaxed text-fg-muted">
+            Estou aberto a oportunidades, colaborações ou só trocar ideia sobre dados e IA.
+            Me chama pelo canal que preferir.
+          </p>
 
           <button
             onClick={copyEmail}

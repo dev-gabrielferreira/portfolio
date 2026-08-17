@@ -4,14 +4,16 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ExternalLink, CheckCircle2 } from "lucide-react";
 import { useEffect } from "react";
 import type { Project } from "@/data/projects";
-import { ProjectImage } from "@/components/ui/ProjectImage";
+import { ProjectCover } from "@/components/ui/ProjectCover";
 import { GithubIcon } from "@/components/ui/BrandIcons";
 
 export function ProjectModal({
   project,
+  cover,
   onClose,
 }: {
   project: Project | null;
+  cover?: string;
   onClose: () => void;
 }) {
   useEffect(() => {
@@ -51,8 +53,8 @@ export function ProjectModal({
               <X size={18} />
             </button>
 
-            <div className="aspect-[16/9] w-full border-b border-border">
-              <ProjectImage project={project} />
+            <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-border">
+              <ProjectCover project={project} cover={cover} sizes="(max-width: 768px) 100vw, 672px" />
             </div>
 
             <div className="p-6 sm:p-8">

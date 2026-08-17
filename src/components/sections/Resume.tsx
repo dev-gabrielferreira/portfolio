@@ -13,11 +13,11 @@ export function Resume() {
               Currículo
             </p>
             <h2 className="font-display mt-4 text-3xl font-semibold tracking-tight text-fg sm:text-4xl">
-              Formação em automação, prática em produtos de IA.
+              Formação em automação, prática em IA.
             </h2>
             <p className="text-balance mt-5 max-w-lg leading-relaxed text-fg-muted">
-              {profile.education.degree} pela {profile.education.institution}, hoje
-              construindo produtos de IA de ponta a ponta — da extração de dados ao agente
+              Sou formado em {profile.education.degree} pela {profile.education.institution}.
+              Hoje construo sistemas de IA de ponta a ponta, da extração de dados até o agente
               que decide o que fazer com eles.
             </p>
 
@@ -55,7 +55,9 @@ export function Resume() {
               <p className="font-display mt-4 text-3xl font-semibold text-fg">
                 {projects.length}
               </p>
-              <p className="mt-1 text-sm text-fg-muted">projetos de IA e dados construídos de ponta a ponta</p>
+              <p className="mt-1 text-sm text-fg-muted">
+                projetos de IA e dados construídos de ponta a ponta
+              </p>
             </div>
             <div className="rounded-2xl border border-border bg-bg-card p-6">
               <Sparkles size={20} className="text-accent-2" />

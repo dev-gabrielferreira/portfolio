@@ -1,6 +1,14 @@
-﻿node_modules/
+node_modules/
 .env
 .env.*
 dist/
 build/
 .DS_Store
+
+# build do Next.js (gerado por `npm run build`, nunca versionar)
+.next/
+out/
+*.tsbuildinfo
+
+# deploy
+.vercel

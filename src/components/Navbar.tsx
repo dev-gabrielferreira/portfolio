@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { profile } from "@/data/profile";
+import { GithubIcon, LinkedinIcon } from "@/components/ui/BrandIcons";
 
 const links = [
   { href: "#sobre", label: "Sobre" },
@@ -33,9 +34,9 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-10">
         <a
           href="#top"
-          className="font-display text-sm font-semibold tracking-tight text-fg"
+          className="font-display text-sm font-semibold tracking-tight text-fg transition-colors hover:text-accent"
         >
-          {profile.initials}
+          {profile.firstName.toLowerCase()}
           <span className="text-accent">.</span>
         </a>
 
@@ -52,12 +53,28 @@ export function Navbar() {
           ))}
         </ul>
 
-        <a
-          href="#contato"
-          className="hidden rounded-full border border-border px-4 py-2 text-xs font-medium text-fg transition-colors hover:border-accent hover:text-accent md:inline-block"
-        >
-          Vamos conversar
-        </a>
+        <div className="hidden items-center gap-4 md:flex">
+          {profile.contact.github && (
+            <a
+              href={profile.contact.github}
+              target="_blank"
+              rel="noreferrer"
+              className="text-fg-muted transition-colors hover:text-fg"
+              aria-label="GitHub"
+            >
+              <GithubIcon size={17} />
+            </a>
+          )}
+          <a
+            href={profile.contact.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className="text-fg-muted transition-colors hover:text-fg"
+            aria-label="LinkedIn"
+          >
+            <LinkedinIcon size={17} />
+          </a>
+        </div>
 
         <button
           onClick={() => setOpen((v) => !v)}

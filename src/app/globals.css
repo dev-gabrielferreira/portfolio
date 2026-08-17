@@ -95,3 +95,65 @@ body {
 .glow-accent {
   box-shadow: 0 0 0 1px var(--border), 0 20px 60px -20px var(--accent-soft);
 }
+
+/* Carrossel infinito de projetos.
+   O deslocamento é -50% menos meio gap: a faixa tem 2N cards com gap uniforme,
+   então metade da largura ainda carrega meio espaçamento a mais. */
+.marquee {
+  position: relative;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 5%,
+    #000 95%,
+    transparent
+  );
+  mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+}
+
+.marquee-track {
+  --marquee-gap: 1.25rem;
+  display: flex;
+  width: max-content;
+  gap: var(--marquee-gap);
+  padding-block: 0.25rem;
+  animation: marquee-scroll 56s linear infinite;
+  will-change: transform;
+}
+
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(calc(-50% - var(--marquee-gap) / 2), 0, 0);
+  }
+}
+
+.photo-frame {
+  box-shadow:
+    0 0 0 1px var(--border),
+    0 40px 90px -50px rgba(0, 0, 0, 0.95);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto;
+  }
+
+  .marquee {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .marquee-track {
+    animation: none;
+  }
+}
